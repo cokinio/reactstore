@@ -9,7 +9,7 @@ function App() {
       <header>
         <NavBar/>
       </header>
-      <ItemListContainer greeting="Bienvenidos" color="blue"/>
+      <ItemListContainer greeting="Bienvenidos a dietetica Todo sano" color="blue"/>
     </div>
   );
 }
