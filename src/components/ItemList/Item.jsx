@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import ItemCount from './counter/ItemCount'
 
 function Item(props) {
   return (
@@ -11,7 +12,7 @@ function Item(props) {
         <Card.Text>
          {props.descriptiom}
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <ItemCount stock={props.stock}/>
       </Card.Body>
     </Card>
   )
