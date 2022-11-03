@@ -19,7 +19,7 @@ function ItemCount(props) {
   return (
     <div>
       <button onClick={onDelete}>-</button>
-      <input style={{textAlign:'center'}}type="text" value={quantity}/>
+      <input style={{textAlign:'center'}}type="text" value={quantity} readOnly/>
       <button onClick={onAdd}>+</button>
     </div>
   )
