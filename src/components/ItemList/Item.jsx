@@ -5,15 +5,15 @@ import ItemCount from './counter/ItemCount'
 
 function Item(props) {
 
-  let {title,description,images,stock}=props.producto;
+  let {title,images,stock,category}=props.producto;
 
   return (
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={images[0]} />
+      <Card.Img variant="top" src={images} />
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>
-         {description}
+         {category}
         </Card.Text>
         <ItemCount stock={stock}/>
       </Card.Body>
