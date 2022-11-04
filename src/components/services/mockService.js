@@ -9,4 +9,13 @@ function getProducts(){
     }));
 }
 
+
+export function getProduct(i){
+    return(new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve(products[i])
+        },2000);
+    }))
+};
+
 export default getProducts;

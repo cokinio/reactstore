@@ -5,7 +5,7 @@ import ItemCount from './counter/ItemCount'
 
 function Item(props) {
 
-  let {title,images,stock,category}=props.producto;
+  let {title,images,stock,category,price}=props.producto;
 
   return (
     <Card style={{ width: '18rem' }}>
@@ -13,7 +13,10 @@ function Item(props) {
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>
-         {category}
+        Categoria:{category}
+        </Card.Text>
+        <Card.Text>
+         {price}
         </Card.Text>
         <ItemCount stock={stock}/>
       </Card.Body>
