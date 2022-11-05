@@ -4,20 +4,24 @@ import ItemDetail from './ItemDetail';
 
 function ItemDetailContainer(props) {
 
-let [product,setProduct]=useState();
+let [product,setProduct]=useState({});
 
-async function obtengoProducto(){
-    let producto1= await getProduct(0);
-    console.log(producto1);
-    setProduct(producto1)
+// useEffect(()=>{
+//   getProduct(1).then((responseData)=>
+//   setProduct(responseData))}
+// ,[])
+
+let producto1={};
+async function productoAsync(){
+  producto1=await getProduct(1);
+  setProduct(producto1);
 }
 
-useEffect(obtengoProducto(),[]);
+useEffect(()=>{productoAsync()})
 
   return (
     <div>
-        {product.title}
-        {/* <ItemDetail producto={product}/> */}
+        <ItemDetail producto={product}/>
     </div>
   )
 }

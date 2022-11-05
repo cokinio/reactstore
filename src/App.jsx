@@ -11,8 +11,8 @@ function App() {
       <header>
         <NavBar/>
       </header>
-      <ItemListContainer greeting="Bienvenidos a dietetica Todo sano" color="blue"/>
-      {/* <ItemDetailContainer id={1} />; */}
+      {/* <ItemListContainer greeting="Bienvenidos a dietetica Todo sano" color="blue"/> */}
+      <ItemDetailContainer id={1} />;
     </div>
   );
 }
