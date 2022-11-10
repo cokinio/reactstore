@@ -1,19 +1,27 @@
 import products from "../data/data"
 
-function getProducts(){
+function getProducts(categ){
    
     return (new Promise((resolve)=>{
+        if (categ===undefined){
+            setTimeout(()=>{
+                resolve(products)
+            },2000);
+        } else{
+        let desiredCategoty= products.filter(
+            (itemsInCat)=>itemsInCat.category===categ);
         setTimeout(()=>{
-            resolve(products)
+            resolve(desiredCategoty)
         },2000);
-    }));
+    }}));
 }
 
 
 export function getProduct(i){
     return(new Promise((resolve, reject)=>{
+        let desiredProduct= products.find((item)=>item.id===Number(i))
         setTimeout(()=>{
-            resolve(products[i])
+            resolve(desiredProduct)
         },2000);
     }))
 };

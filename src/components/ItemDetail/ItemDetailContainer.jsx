@@ -1,6 +1,8 @@
 import React, {useState,useEffect} from 'react';
 import { getProduct } from '../services/mockService';
 import ItemDetail from './ItemDetail';
+import { useParams } from "react-router-dom";
+
 
 function ItemDetailContainer(props) {
 
@@ -11,9 +13,12 @@ let [product,setProduct]=useState({});
 //   setProduct(responseData))}
 // ,[])
 
+const idItem= useParams().id;
+// console.log(idItem);
+
 let producto1={};
 async function productoAsync(){
-  producto1=await getProduct(1);
+  producto1=await getProduct(idItem);
   setProduct(producto1);
 }
 

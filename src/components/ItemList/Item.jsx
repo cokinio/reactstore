@@ -1,11 +1,12 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import ItemCount from './counter/ItemCount'
+import { Link } from "react-router-dom";
 
 function Item(props) {
 
-  let {title,images,stock,category,price}=props.producto;
+  let {title,images,stock,category,price,id}=props.producto;
+  const urldetail=`/item/${id}`;
 
   return (
     <Card style={{ width: '18rem' }}>
@@ -18,7 +19,9 @@ function Item(props) {
         <Card.Text>
          {price}
         </Card.Text>
-        <ItemCount stock={stock}/>
+        <Link to={urldetail}>
+          <Button className="btn btn-secondary">Ver mas</Button>
+        </Link>
       </Card.Body>
     </Card>
   )

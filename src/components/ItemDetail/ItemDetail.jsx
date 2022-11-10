@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
+import ItemCount from '../ItemList/counter/ItemCount'
 
 function ItemDetail(props) {
 
@@ -17,6 +18,7 @@ function ItemDetail(props) {
         <Card.Text>
          {price}
         </Card.Text>
+        <ItemCount stock={stock}/> 
       </Card.Body>
     </Card>
   )
