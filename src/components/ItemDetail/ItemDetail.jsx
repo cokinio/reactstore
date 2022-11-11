@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from 'react-bootstrap/Card';
+// import Card from 'react-bootstrap/Card';
 import ItemCount from '../ItemList/counter/ItemCount'
 
 function ItemDetail(props) {
@@ -8,19 +8,18 @@ function ItemDetail(props) {
 
 
   return (
-        <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={images} />
-      <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Card.Text>
-        Categoria:{category}
-        </Card.Text>
-        <Card.Text>
-         {price}
-        </Card.Text>
-        <ItemCount stock={stock}/> 
-      </Card.Body>
-    </Card>
+        <div className="row fluid mx-5 mt-5">
+          <div className="col-md-4"> 
+              <img src={images} alt={title}/>
+          </div>
+          <div className="col-md-8"> 
+              <h1>{title}</h1>
+              <p className='mb-5'>Categoria: {category}</p>
+              <h2 className='mt-5'>Precio: {price}</h2>
+              <p>Cantidad en stock {stock}</p>
+              <ItemCount stock={stock}/>
+          </div>
+        </div>
   )
 }
 
