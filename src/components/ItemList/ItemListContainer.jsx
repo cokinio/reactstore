@@ -8,16 +8,12 @@ function ItemListContainer(props) {
 
 let [producto, setProducto]=useState([]);
 let categ= useParams().id; 
-console.log(categ)
-// if (categ!==undefined){
-// let category=categ.replaceAll('%20', ' ');
-// console.log(category)
-// }
+
 
 useEffect(()=>{
   getProducts(categ).then((responseData)=>{
     setProducto(responseData);
-    console.log(responseData);
+    //console.log(responseData);
     }
   ).catch((error)=>{console.error("error")})
 },[categ])

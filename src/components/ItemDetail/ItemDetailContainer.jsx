@@ -14,7 +14,7 @@ let [product,setProduct]=useState({});
 // ,[])
 
 const idItem= useParams().id;
-// console.log(idItem);
+
 
 let producto1={};
 async function productoAsync(){

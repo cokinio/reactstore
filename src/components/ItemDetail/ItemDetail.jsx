@@ -1,14 +1,17 @@
-import { Button } from 'bootstrap';
 import React from 'react'
-// import Card from 'react-bootstrap/Card';
 import ItemCount from '../counter/ItemCount'
+import { useContext } from "react";
+import { cartContext} from "../context/cartContext"
 
 function ItemDetail(props) {
+
+  const miContext =useContext(cartContext);
+  let {addToCart}=miContext;
 
   let {title,images,stock,category,price}=props.producto;
 
   function onAdd(quantity){
-    console.log(`agregaste ${quantity} item al carrito`);
+    addToCart(props.producto, quantity);
   }
 
   return (
