@@ -9,11 +9,8 @@ export function CartContextProvider({ children }) {
     function addToCart(product, quantity){
         let parsedProduct={...product, cant:quantity};
         let newCart = [...cart];
-       
-        console.log(cart);
          let productFoundInd =newCart.findIndex((item) => 
          {return item.id===product.id})
-         console.log(productFoundInd);
           if (productFoundInd!==(-1)){
             newCart[productFoundInd].cant+=quantity;
           }else{
@@ -26,8 +23,10 @@ export function CartContextProvider({ children }) {
       let newCart = [...cart];
       let productFoundInd =newCart.findIndex((item) => 
       {return item.id===itemId})
+      console.log(productFoundInd);
       if (productFoundInd!==(-1)){
         newCart.splice(productFoundInd,1)
+        setCart(newCart);
       }else{
         console.log("el producto no esta en el carrito")
       }
@@ -35,11 +34,36 @@ export function CartContextProvider({ children }) {
 
     function itemsInCart() {
       let total = 0;
-      console.log(cart)
       for (let i=0; i<cart.length ;i++){
         total=cart[i].cant+total;
       }
-      
+      return total;
+    }
+
+    function totalCart(){
+      let total=0;
+      let stringPrecio="";
+      let precio=0;
+
+      cart.forEach(element => {
+        stringPrecio=element.price;
+        stringPrecio=stringPrecio.replace('.','')
+        stringPrecio=stringPrecio.replace(/,/, '.')
+        stringPrecio=stringPrecio.slice(1,element.price.length)
+        precio=parseFloat(stringPrecio);
+        total=total+precio*element.cant;
+      });
+      return total.toFixed(2);
+    }
+
+    function subtotal(price,cant){
+      let total=0;
+      let stringPrecio=price;
+      stringPrecio=stringPrecio.replace('.','')
+      stringPrecio=stringPrecio.replace(/,/, '.')
+      let precio=stringPrecio.slice(1,stringPrecio.length)
+      total=precio*cant;
+      return total.toFixed(2);
     }
 
     function clear(){
@@ -51,7 +75,7 @@ export function CartContextProvider({ children }) {
       return found;
     }
     return (
-        <cartContext.Provider value={{ addToCart, removeItem, itemsInCart, clear, isInCart}}>
+        <cartContext.Provider value={{ addToCart, removeItem, itemsInCart, clear, isInCart, totalCart,subtotal, cart}}>
           {children}
         </cartContext.Provider>
       );

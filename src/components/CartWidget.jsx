@@ -3,6 +3,7 @@ import imagenCarrito from './images/cart.svg';
 import "./CartWidget.css"
 import {useContext} from "react";
 import {cartContext} from "../components/context/cartContext"
+import {Link} from "react-router-dom";
 
 
 function CartWidget() {
@@ -10,11 +11,11 @@ function CartWidget() {
    const miContext =useContext(cartContext);
    let {itemsInCart}=miContext;
    let cantidad=itemsInCart();
-   console.log(cantidad)
   return (
-    <div className="boxSize">
-        <img src={imagenCarrito} alt="cart"/>
-        <h1 style={{color:"white"}}>{cantidad}</h1>
+    <div className="boxSize d-flex">
+
+        <Link to="/cart" className="nav-link"><img src={imagenCarrito} alt="cart"/></Link>
+        <small style={{color:"white"}}>{cantidad}</small>
     </div>
   )
 }
