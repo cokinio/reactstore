@@ -12,7 +12,9 @@ export function CartContextProvider({ children }) {
          let productFoundInd =newCart.findIndex((item) => 
          {return item.id===product.id})
           if (productFoundInd!==(-1)){
-            newCart[productFoundInd].cant+=quantity;
+            //newCart[productFoundInd].cant+=quantity;
+            newCart[productFoundInd].cant=quantity;
+            setCart(newCart);
           }else{
             newCart.push(parsedProduct);
             setCart(newCart);
@@ -23,7 +25,6 @@ export function CartContextProvider({ children }) {
       let newCart = [...cart];
       let productFoundInd =newCart.findIndex((item) => 
       {return item.id===itemId})
-      console.log(productFoundInd);
       if (productFoundInd!==(-1)){
         newCart.splice(productFoundInd,1)
         setCart(newCart);
@@ -71,7 +72,7 @@ export function CartContextProvider({ children }) {
     }
 
     function isInCart(id){
-      let found= cart.find((item)=> item.id===id)
+      let found= cart.findIndex((item)=> item.id===id)
       return found;
     }
     return (

@@ -10,12 +10,12 @@ function CartWidget() {
   
    const miContext =useContext(cartContext);
    let {itemsInCart}=miContext;
-   let cantidad=itemsInCart();
+
   return (
     <div className="boxSize d-flex">
 
         <Link to="/cart" className="nav-link"><img src={imagenCarrito} alt="cart"/></Link>
-        <small style={{color:"white"}}>{cantidad}</small>
+        <small style={{color:"white"}}>{itemsInCart()}</small>
     </div>
   )
 }

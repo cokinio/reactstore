@@ -6,9 +6,15 @@ import { cartContext} from "../context/cartContext"
 function ItemDetail(props) {
 
   const miContext =useContext(cartContext);
-  let {addToCart}=miContext;
+  let {addToCart,isInCart,cart}=miContext;
 
-  let {title,images,stock,category,price}=props.producto;
+  let {title,images,stock,category,price,id}=props.producto;
+  let cant=0;
+
+  let index=isInCart(id);
+  if (index!==-1){
+    cant=cart[index].cant
+  }
 
   function onAdd(quantity){
     addToCart(props.producto, quantity);
@@ -24,7 +30,7 @@ function ItemDetail(props) {
               <p className='mb-5'>Categoria: {category}</p>
               <h2 className='mt-5'>Precio: {price}</h2>
               <p>Cantidad en stock {stock}</p>
-              <ItemCount stock={stock} onAddToCart={onAdd}/>
+              <ItemCount stock={stock} onAddToCart={onAdd} cant={cant} />
           </div>
         </div>
         )}

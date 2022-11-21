@@ -1,9 +1,8 @@
 import React, {useState} from 'react'
-
 function ItemCount(props) {
 
- let [quantity, modifyQuantity]=useState(0);
- 
+ let [quantity, modifyQuantity]=useState(props.cant);
+
  function onDelete() {
     if (quantity>0){
         modifyQuantity(--quantity);

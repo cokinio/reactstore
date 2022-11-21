@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function Item(props) {
 
-  let {title,images,stock,category,price,id}=props.producto;
+  let {title,images,category,price,id}=props.producto;
   const urldetail=`/item/${id}`;
 
   return (

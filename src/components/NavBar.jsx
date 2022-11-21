@@ -2,8 +2,14 @@ import "./NavBar.css"
 import React from 'react'
 import CartWidget from './CartWidget'
 import {Link} from "react-router-dom";
+import {useContext} from 'react';
+import { cartContext } from "../components/context/cartContext";
 
 function NavBar() {
+
+  const miContext = useContext(cartContext);
+  const { itemsInCart} =miContext;
+ 
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark  bg-dark">
@@ -26,7 +32,7 @@ function NavBar() {
             <li><Link to="/category/Cereales" className="nav-link">Cereales</Link></li>
             <li><Link to="/category/Especias" className="nav-link">Especias</Link></li>
             <li><Link to="/category/Otros" className="nav-link">Otros</Link></li>
-            <li><CartWidget/></li>
+            {itemsInCart()===0 ? <p>""</p> :<li><CartWidget/></li>}
       </ul>
     </div>
   </div>

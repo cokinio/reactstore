@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 
 function ItemDetailContainer(props) {
 
-let [product,setProduct]=useState({});
+let [product,setProduct]=useState(null);
 
 // useEffect(()=>{
 //   getProduct(1).then((responseData)=>
@@ -23,6 +23,14 @@ async function productoAsync(){
 }
 
 useEffect(()=>{productoAsync()})
+
+if (product===null) return(
+  <div className="d-flex justify-content-center">
+    <div className="spinner-border" style={{width: "3rem", height: "3rem"}} role="status">
+    <span className="visually-hidden">Loading...</span>
+    </div>
+</div>
+)
 
   return (
     <div>

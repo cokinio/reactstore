@@ -4,6 +4,7 @@ import Item from "./Item";
 import getProducts from '../services/mockService';
 import { useParams } from "react-router-dom";
 
+
 function ItemListContainer(props) {
 
 let [producto, setProducto]=useState([]);
@@ -18,6 +19,14 @@ useEffect(()=>{
   ).catch((error)=>{console.error("error")})
 },[categ])
 
+  //console.log(producto)
+  if (producto.length===0) return(
+      <div className="d-flex justify-content-center">
+        <div className="spinner-border" style={{width: "3rem", height: "3rem"}} role="status">
+        <span className="visually-hidden">Loading...</span>
+        </div>
+    </div>
+  )
 
   return (
     <div>
