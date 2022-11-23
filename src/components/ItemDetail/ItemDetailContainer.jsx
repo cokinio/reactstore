@@ -1,5 +1,6 @@
 import React, {useState,useEffect} from 'react';
-import { getProduct } from '../services/mockService';
+//import { getProduct } from '../services/mockService';
+import { getProduct } from '../services/firestore';
 import ItemDetail from './ItemDetail';
 import { useParams } from "react-router-dom";
 
@@ -22,7 +23,7 @@ async function productoAsync(){
   setProduct(producto1);
 }
 
-useEffect(()=>{productoAsync()})
+useEffect(()=>{productoAsync();},[]);
 
 if (product===null) return(
   <div className="d-flex justify-content-center">

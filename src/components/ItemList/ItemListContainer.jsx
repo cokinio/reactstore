@@ -1,7 +1,8 @@
 import React, {useState,useEffect} from 'react';
 import "./ItemListContainer.css";
 import Item from "./Item";
-import getProducts from '../services/mockService';
+//import getProducts from '../services/mockService';
+import getProducts from '../services/firestore';
 import { useParams } from "react-router-dom";
 
 
