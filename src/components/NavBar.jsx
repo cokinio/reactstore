@@ -32,7 +32,7 @@ function NavBar() {
             <li><Link to="/category/Cereales" className="nav-link">Cereales</Link></li>
             <li><Link to="/category/Especias" className="nav-link">Especias</Link></li>
             <li><Link to="/category/Otros" className="nav-link">Otros</Link></li>
-            {itemsInCart()===0 ? <p>""</p> :<li><CartWidget/></li>}
+            {itemsInCart()===0 ? <p>""</p> :<li className="mx-auto"><CartWidget /></li>}
       </ul>
     </div>
   </div>

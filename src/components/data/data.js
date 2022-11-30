@@ -601,8 +601,8 @@ function getRandomInt(min, max) {
 	return Math.floor(Math.random() * (max - min) + min);}
 
 const addId=(product1)=> {
-	return product1.map((obj, posicion)=>  {
-	  return ({...obj,id: posicion, stock:getRandomInt(1,20)})
+	return product1.map((obj, index)=>  {
+	  return ({...obj,posicion:index, stock:getRandomInt(1,20)})
 	});
   };
 

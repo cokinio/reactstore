@@ -51,7 +51,7 @@ export default async function getProducts(categ){
 export async function getProduct(i){
   const docRef = doc(DB, "products", i);
   const docSnap = await getDoc(docRef);
-  console.log(docSnap)
+  // console.log(docSnap)
   const itemData = docSnap.data();
   itemData.id = docSnap.id;
 

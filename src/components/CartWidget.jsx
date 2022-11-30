@@ -15,7 +15,7 @@ function CartWidget() {
     <div className="boxSize d-flex">
 
         <Link to="/cart" className="nav-link"><img src={imagenCarrito} alt="cart"/></Link>
-        <small style={{color:"white"}}>{itemsInCart()}</small>
+        <p style={{color:"white", fontSize:"0.75rem"}} className="mt-4">{itemsInCart()}</p>
     </div>
   )
 }

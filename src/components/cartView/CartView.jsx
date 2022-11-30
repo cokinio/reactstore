@@ -2,7 +2,8 @@ import React from "react";
 import { cartContext } from "../context/cartContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import {createBuyOrder} from "../services/firestore"
+import {createBuyOrder} from "../services/firestore";
+import Button from 'react-bootstrap/Button';
 
 let orderNumber=null;
 
@@ -11,14 +12,14 @@ function CartView() {
 	const { cart, clear, removeItem, itemsInCart, totalCart, subtotal } =
 		miContext;
 
-	function handleBuyCart(evt){
+	async function handleBuyCart(evt){
 		let order={
 			buyer:{name:"Juan", phone:321856987, email:"juan@yahoo.com"},
 			items:cart,
 			date: new Date(),
 			total: totalCart(),
 		}
-		orderNumber=createBuyOrder(order);
+		orderNumber=await createBuyOrder(order);
 		console.log(orderNumber);
 		clear();
 	}
@@ -99,8 +100,8 @@ function CartView() {
 					</tr>
 				</tbody>
 			</table>
-			<button onClick={clear} style={{backgroundColor:"red"}}>Borrar Carrito</button>
-			<button onClick={handleBuyCart} style={{backgroundColor:"green"}}>Realizar compra</button>
+			<Button onClick={clear} variant="danger" className="mx-2">Borrar Carrito</Button>
+			<Button onClick={handleBuyCart} variant="success" className="mx-2">Realizar compra</Button>
 		</div>
 	);
 }
