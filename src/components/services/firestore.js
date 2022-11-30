@@ -1,4 +1,4 @@
-
+import products from "../data/data"
 import { initializeApp } from "firebase/app";
 import {
     getFirestore,
@@ -7,7 +7,8 @@ import {
     getDocs,
     getDoc,  
     query,
-    where
+    where,
+    addDoc
   } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -55,4 +56,19 @@ export async function getProduct(i){
   itemData.id = docSnap.id;
 
   return itemData;
+}
+
+
+export async function createBuyOrder(orderData) {
+  const collectionRef = collection(DB, "orders");
+  let respuesta = await addDoc(collectionRef, orderData);
+  return respuesta.id;
+}
+
+export async function exportDataToFirestore() {
+  const colectionProductsRef = collection(DB, "products");
+  for (let item of products) {
+    const newDoc = await addDoc(colectionProductsRef, item);
+    console.log(`se agrego producto con ID: ${newDoc.id}`);
+  }
 }

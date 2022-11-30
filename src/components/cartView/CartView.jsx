@@ -2,20 +2,46 @@ import React from "react";
 import { cartContext } from "../context/cartContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import {createBuyOrder} from "../services/firestore"
+
+let orderNumber=null;
 
 function CartView() {
 	const miContext = useContext(cartContext);
 	const { cart, clear, removeItem, itemsInCart, totalCart, subtotal } =
 		miContext;
 
-  if (itemsInCart()===0){
+	function handleBuyCart(evt){
+		let order={
+			buyer:{name:"Juan", phone:321856987, email:"juan@yahoo.com"},
+			items:cart,
+			date: new Date(),
+			total: totalCart(),
+		}
+		orderNumber=createBuyOrder(order);
+		console.log(orderNumber);
+		clear();
+	}
+	
+
+  if ((itemsInCart()===0) && (orderNumber===null)){
     return(
       <div>
       <h2>Carrito Vacío</h2>
       <Link	to={`/`}><p>Presione aqui para regresar a la pagina principal</p></Link>
       </div>
     )
-  }
+	}
+
+	else if ((itemsInCart()===0) && (orderNumber!==null)) {
+		return(
+			<div>
+				<h1>Compra realizada</h1>
+				<p>su numero de orden es: {orderNumber}</p>
+			</div>
+		)
+	}
+
 
 	return (
 		<div>
@@ -64,7 +90,7 @@ function CartView() {
 					})}
 					<tr>
 						<th scope="row"></th>
-            <td></td>
+            			<td></td>
 						<td></td>
 						<td>Cantidad productos: {itemsInCart()}</td>
 						<td></td>
@@ -73,7 +99,8 @@ function CartView() {
 					</tr>
 				</tbody>
 			</table>
-			<button onClick={clear}>Borrar Carrito</button>
+			<button onClick={clear} style={{backgroundColor:"red"}}>Borrar Carrito</button>
+			<button onClick={handleBuyCart} style={{backgroundColor:"green"}}>Realizar compra</button>
 		</div>
 	);
 }
