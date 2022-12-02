@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import {createBuyOrder} from "../services/firestore";
 import Button from 'react-bootstrap/Button';
+import CartForm from "./CartForm";
 
 let orderNumber=null;
 
@@ -100,6 +101,7 @@ function CartView() {
 					</tr>
 				</tbody>
 			</table>
+			<CartForm/>
 			<Button onClick={clear} variant="danger" className="mx-2">Borrar Carrito</Button>
 			<Button onClick={handleBuyCart} variant="success" className="mx-2">Realizar compra</Button>
 		</div>

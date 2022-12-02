@@ -1,5 +1,5 @@
 import React from 'react'
-import imagenCarrito from './images/cart.svg';
+import imagenCarrito from './images/cart-36-64.ico';
 import "./CartWidget.css"
 import {useContext} from "react";
 import {cartContext} from "../components/context/cartContext"

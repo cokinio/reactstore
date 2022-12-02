@@ -3,27 +3,20 @@ import React, {useState,useEffect} from 'react';
 import { getProduct } from '../services/firestore';
 import ItemDetail from './ItemDetail';
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 function ItemDetailContainer(props) {
 
 let [product,setProduct]=useState(null);
 
-// useEffect(()=>{
-//   getProduct(1).then((responseData)=>
-//   setProduct(responseData))}
-// ,[])
-
 const idItem= useParams().id;
 
-
-let producto1={};
-async function productoAsync(){
-  producto1=await getProduct(idItem);
-  setProduct(producto1);
-}
-
-useEffect(()=>{productoAsync();},[]);
+useEffect(()=>{getProduct(idItem).then((responseData)=>
+                setProduct(responseData)).catch(()=>{
+                setProduct("notValidID"); 
+                console.log("error de id de producto no existe")})
+              },[]);
 
 if (product===null) return(
   <div className="d-flex justify-content-center">
@@ -32,6 +25,13 @@ if (product===null) return(
     </div>
 </div>
 )
+
+if (product==="notValidID") return(
+  <div>
+    <h3>El id de producto que usted desea buscar no existe</h3>
+    <Link	to={`/`}><p>Presione aqui para regresar a la pagina principal</p></Link>
+  </div>
+    )
 
   return (
     <div>

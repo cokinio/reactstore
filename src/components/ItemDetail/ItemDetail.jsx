@@ -2,6 +2,7 @@ import React from 'react'
 import ItemCount from '../counter/ItemCount'
 import { useContext } from "react";
 import { cartContext} from "../context/cartContext"
+import { Link } from "react-router-dom";
 
 function ItemDetail(props) {
 
@@ -30,7 +31,12 @@ function ItemDetail(props) {
               <p className='mb-5'>Categoria: {category}</p>
               <h2 className='mt-5'>Precio: {price}</h2>
               <p>Cantidad en stock {stock}</p>
-              <ItemCount stock={stock} onAddToCart={onAdd} cant={cant} />
+              {index!==-1 ?  ( <Link to="/cart">
+                          <button  type="button" className="btn btn-secondary btn-sm my-3">Ir al Carrito</button>
+                          </Link>
+                ) : (
+              <ItemCount stock={stock} onAddToCart={onAdd} cant={cant} />)}
+
           </div>
         </div>
         )}
