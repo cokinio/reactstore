@@ -12,8 +12,8 @@
 <hr>
 
 <p align="center">
-  <a href="#key-features">Funciones principales</a> •
-  <a href="#how-to-use">Como utilizarlo</a> •
+  <a href="#Funciones-principales ">Funciones principales</a> •
+  <a href="#Como-utilizarlo">Como utilizarlo</a> •
   <a href="#credits">Creditos</a> •
   <a href="#related">Relacionados</a> •
   <a href="#license">Licencia</a>
@@ -21,7 +21,7 @@
 
 ![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
 
-## Funciones principales 
+## Funciones-principales 
 
 * Seleccion de productos por categoría en la Navbar
   - Las categorias son accesibles desde la ruta /categories/:categoryId
@@ -31,7 +31,7 @@
 * Conexión con Firebase a los fines de lograr una base de datos 
 
 
-## Como utilizarlo
+## Como-utilizarlo
 
 Para correr esta aplicacion, necesitarás tener [Git](https://git-scm.com) y [Node.js](https://nodejs.org/en/download/) (que viene con [npm](http://npmjs.com)) instalado en tu pc. Luego ejecutar los siguientes comandos en la terminal:
 
@@ -48,10 +48,6 @@ $ npm install
 # Run the app
 $ npm start
 ```
-
-## Emailware
-
-Markdownify is an [emailware](https://en.wiktionary.org/wiki/emailware). Meaning, if you liked using this app or it has helped you in any way, I'd like you send me an email at <bullredeyes@gmail.com> about anything you'd want to say about this software. I'd really appreciate it!
 
 ## Credits
 
