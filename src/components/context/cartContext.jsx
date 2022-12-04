@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import {createBuyOrder} from "../services/firestore";
 
 export const cartContext = createContext();
 
@@ -75,8 +76,22 @@ export function CartContextProvider({ children }) {
       let found= cart.findIndex((item)=> item.id===id)
       return found;
     }
+
+    async function handleBuyCart(client){
+      let order={
+        buyer:client,
+        items:cart,
+        date: new Date(),
+        total: totalCart(),
+      }
+      let orderNumber=await createBuyOrder(order);
+      console.log(orderNumber);
+      clear();
+      return (orderNumber)
+    }
+
     return (
-        <cartContext.Provider value={{ addToCart, removeItem, itemsInCart, clear, isInCart, totalCart,subtotal, cart}}>
+        <cartContext.Provider value={{ addToCart, removeItem, itemsInCart, clear, isInCart, totalCart,subtotal,handleBuyCart, cart}}>
           {children}
         </cartContext.Provider>
       );
