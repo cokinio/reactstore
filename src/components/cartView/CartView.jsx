@@ -5,9 +5,11 @@ import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import CartForm from "./CartForm";
 import CartTable from "./CartTable";
+import { useNavigate } from "react-router-dom";
 
 function CartView() {
 	const miContext = useContext(cartContext);
+	const navigate = useNavigate();
 	const {clear, itemsInCart,handleBuyCart} =
 		miContext;
 
@@ -84,14 +86,9 @@ function CartView() {
 		delete client1.mail;
 		createOrder(client1);
 	}
-	//buying step =5
-	else if ((itemsInCart()===0) && (orderNumber!==null)) {
-		return(
-			<div>
-				<h1>Compra realizada</h1>
-				<p>su numero de orden es: {orderNumber}</p>
-			</div>
-		)
+	//buying step=3 buy order
+	else if ((itemsInCart()===0) &&(orderNumber!==null)) {
+			navigate(`/yourOrder/${orderNumber}`);
 	}
 
 

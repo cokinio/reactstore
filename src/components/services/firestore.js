@@ -54,7 +54,14 @@ export async function getProduct(i){
   // console.log(docSnap)
   const itemData = docSnap.data();
   itemData.id = docSnap.id;
+  return itemData;
+}
 
+export async function getOrder(i){
+  const docRef = doc(DB, "orders", i);
+  const docSnap = await getDoc(docRef);
+  let itemData = docSnap.data();
+  console.log(itemData)
   return itemData;
 }
 

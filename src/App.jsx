@@ -5,6 +5,7 @@ import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 import CartView from './components/cartView/CartView';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartContextProvider } from './components/context/cartContext';
+import YourOrder from './components/yourOrder/YourOrder';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/reactstore" element={<ItemListContainer greeting="Bienvenidos a dietetica Todo sano" />}/>;
             <Route path="/item/:id" element={ <ItemDetailContainer/>}/>;
             <Route path="/category/:id" element={ <ItemListContainer greeting="Bienvenidos a dietetica Todo sano" />}/>;
+            <Route path="/yourOrder/:idOrder" element={<YourOrder />} />
             <Route path="/cart" element={ <CartView/> }/>;
             <Route path='*' element={ <h1>Pagina no existe</h1> }/>
           </Routes>
