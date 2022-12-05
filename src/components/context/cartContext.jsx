@@ -85,7 +85,6 @@ export function CartContextProvider({ children }) {
         total: totalCart(),
       }
       let orderNumber=await createBuyOrder(order);
-      console.log(orderNumber);
       clear();
       return (orderNumber)
     }

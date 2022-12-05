@@ -11,9 +11,7 @@ const idOrder = useParams().idOrder;
 useEffect(()=>{getOrder(idOrder).then((responseData)=>{
     setOrder(responseData);})},[idOrder])
 
-console.log(order)
 let itemData=order.items;
-console.log(itemData)
 
 if (itemData===[]){
     return(

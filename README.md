@@ -12,14 +12,13 @@
 <hr>
 
 <p align="center">
-  <a href="#Funciones-principales ">Funciones principales</a> •
+  <a href="#Funciones-principales">Funciones principales</a> •
   <a href="#Como-utilizarlo">Como utilizarlo</a> •
   <a href="#credits">Creditos</a> •
-  <a href="#related">Relacionados</a> •
   <a href="#license">Licencia</a>
 </p>
 
-![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
+![screenshot](https://media.giphy.com/media/kHjfyu1e2oiHGmnXSy/giphy.gif)
 
 ## Funciones-principales 
 
@@ -28,7 +27,11 @@
 * Vista detallada de productos
 * Posibilidad de agregar productos al carrito
 * Funciones de calculo de precio total del carrito
-* Conexión con Firebase a los fines de lograr una base de datos 
+* Conexión con Firebase a los fines de lograr una base de datos
+* Generecaión de orden de compra en firebase
+  -Las ordenes de compra son accesibles desde la ruta /yourOrder/:orderId
+* Formulario para ingresar datos del comprador y verificar e-mail
+
 
 
 ## Como-utilizarlo
@@ -49,44 +52,25 @@ $ npm install
 $ npm start
 ```
 
-## Credits
+## Creditos
 
-This software uses the following open source packages:
+Esto software usa los siguientes paquetes de código libre:
 
-- [Electron](http://electron.atom.io/)
+- [React](https://es.reactjs.org/)
 - [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
-- [showdown](http://showdownjs.github.io/showdown/)
-- [CodeMirror](http://codemirror.net/)
-- Emojis are taken from [here](https://github.com/arvida/emoji-cheat-sheet.com)
-- [highlight.js](https://highlightjs.org/)
+- [Firebase](https://www.npmjs.com/package/firebase)
+- [React Bootstrap](https://react-bootstrap.github.io/)
+- [React Router Dom](https://reactrouter.com/en/main)
+- [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+- [Gh-Pages](https://www.npmjs.com/package/gh-pages)
 
-## Related
 
-[markdownify-web](https://github.com/amitmerchant1990/markdownify-web) - Web version of Markdownify
-
-## Support
-
-<a href="https://www.buymeacoffee.com/5Zn8Xh3l9" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
-
-<p>Or</p> 
-
-<a href="https://www.patreon.com/amitmerchant">
-	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
-</a>
-
-## You may also like...
-
-- [Pomolectron](https://github.com/amitmerchant1990/pomolectron) - A pomodoro app
-- [Correo](https://github.com/amitmerchant1990/correo) - A menubar/taskbar Gmail App for Windows and macOS
-
-## License
+## Licencia
 
 MIT
 
 ---
 
-> [amitmerchant.com](https://www.amitmerchant.com) &nbsp;&middot;&nbsp;
-> GitHub [@amitmerchant1990](https://github.com/amitmerchant1990) &nbsp;&middot;&nbsp;
-> Twitter [@amit_merchant](https://twitter.com/amit_merchant)
+> GitHub [@cokinio](https://github.com/cokinio) 
+
 

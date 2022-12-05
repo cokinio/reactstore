@@ -1,6 +1,6 @@
 import React from "react";
 import { cartContext } from "../context/cartContext";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState} from "react";
 import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import CartForm from "./CartForm";
@@ -31,18 +31,14 @@ function CartView() {
 
 	function handleBuy(evt){
 		setBuyingStep(++buyingStep);
-		console.log(buyingStep)
 	}
 	
 	function onSubmit(client){
-		console.log(client)
 		if (isClientDataSet===null){
 			setClientDataSet(true);
-			console.log(isClientDataSet)
 			return;
 		}
 		setBuyingStep(++buyingStep);
-		console.log(buyingStep)
 	}
 	
 	async function createOrder(client){
