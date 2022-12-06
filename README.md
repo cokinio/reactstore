@@ -7,15 +7,15 @@
 
 <h4 align="center"> Una tienda simple realizada en React con la tematica de dietética naturista.</h4>
 <br>
-<p align="center"><a href="http://cokinio.github.io/reactstore" target="_blank">Ver sitio web</a></>
+<p align="center"><a href="https://dietetica.vercel.app/" target="_blank">Ver sitio web</a></>
 <br>
 <hr>
 
 <p align="center">
   <a href="#Funciones-principales">Funciones principales</a> •
   <a href="#Como-utilizarlo">Como utilizarlo</a> •
-  <a href="#credits">Creditos</a> •
-  <a href="#license">Licencia</a>
+  <a href="#Creditos">Creditos</a> •
+  <a href="#Licencia">Licencia</a>
 </p>
 
 ![screenshot](https://media.giphy.com/media/kHjfyu1e2oiHGmnXSy/giphy.gif)

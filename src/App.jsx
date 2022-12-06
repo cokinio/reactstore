@@ -18,7 +18,6 @@ function App() {
           </header>
           <Routes>
             <Route path="/" element={<ItemListContainer greeting="Bienvenidos a dietetica Todo sano" />}/>;
-            {/* agrego esto para que me funcione el deploy en github pages */}
             <Route path="/reactstore" element={<ItemListContainer greeting="Bienvenidos a dietetica Todo sano" />}/>;
             <Route path="/item/:id" element={ <ItemDetailContainer/>}/>;
             <Route path="/category/:id" element={ <ItemListContainer greeting="Bienvenidos a dietetica Todo sano" />}/>;

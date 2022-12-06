@@ -16,7 +16,7 @@ useEffect(()=>{getProduct(idItem).then((responseData)=>
                 setProduct(responseData)).catch(()=>{
                 setProduct("notValidID"); 
                 console.log("error de id de producto no existe")})
-              },[]);
+              },[idItem]);
 
 if (product===null) return(
   <div className="d-flex justify-content-center">
